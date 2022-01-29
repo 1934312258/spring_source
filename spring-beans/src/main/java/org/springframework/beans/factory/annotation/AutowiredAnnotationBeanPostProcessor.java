@@ -251,11 +251,11 @@ public class AutowiredAnnotationBeanPostProcessor extends InstantiationAwareBean
 				ReflectionUtils.doWithMethods(beanClass, method -> {
 					/**
 					 * 判断当前的方法上是否配置了@Lookup注解(用法)
-					 * 比如我们单实例对InstA对象中有一个多实例的对象InstB ,我们在实例InstA中注入了InstB对象
+					 * 比如我们单实例InstA对象中有一个多实例的对象InstB ,我们在实例InstA中注入了InstB对象
 					 * 但是我们在InstA对象中方法使用到instB对象的时候发现instB对象居然是单例的,和我们的想法完全不同，
 					 * 因为我们在创建instA的时候 instB已经绑到instA上,不管以后我们怎么使用到instA中的对象instB都是单例的.
 					 * 解决方案1:要么在instA上实现 beanFactoryAware接口,每次要你使用instB的时候，都去容器中获取
-					 * 解决方案2:在某个方法上标注了@LookUp方法,标注了方法 ,就会去容器中获取所以每次都是多实的
+					 * 解决方案2:在某个方法上标注了@LookUp方法,标注了方法 ,就会去容器中获取所以每次都是多实例的
 					 * 技术blog：https://www.jianshu.com/p/fc574881e3a2
 					 */
 					Lookup lookup = method.getAnnotation(Lookup.class);

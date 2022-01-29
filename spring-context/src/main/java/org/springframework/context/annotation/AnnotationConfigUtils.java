@@ -129,7 +129,8 @@ public class AnnotationConfigUtils {
 	 * Register all relevant annotation post processors in the given registry.
 	 * @param registry the registry to operate on
 	 */
-	public static void registerAnnotationConfigProcessors(BeanDefinitionRegistry registry) {
+	public static void
+	registerAnnotationConfigProcessors(BeanDefinitionRegistry registry) {
 		registerAnnotationConfigProcessors(registry, null);
 	}
 
@@ -141,7 +142,8 @@ public class AnnotationConfigUtils {
 	 * @return a Set of BeanDefinitionHolders, containing all bean definitions
 	 * that have actually been registered by this call
 	 */
-	public static Set<BeanDefinitionHolder> registerAnnotationConfigProcessors(
+	public static Set<BeanDefinitionHolder>
+	registerAnnotationConfigProcessors(
 			BeanDefinitionRegistry registry, @Nullable Object source) {
 
 		DefaultListableBeanFactory beanFactory = unwrapDefaultListableBeanFactory(registry);

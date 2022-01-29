@@ -300,7 +300,7 @@ public class ClassPathBeanDefinitionScanner extends ClassPathScanningCandidateCo
 				if (candidate instanceof AbstractBeanDefinition) {
 					postProcessBeanDefinition((AbstractBeanDefinition) candidate, beanName);
 				}
-				//获取@Lazy @DependsOn等注解的数据设置到BeanDefinition中
+				//获取@Lazy @DependsOn @Primary @Role @Description等注解的数据设置到BeanDefinition中
 				if (candidate instanceof AnnotatedBeanDefinition) {
 					AnnotationConfigUtils.processCommonDefinitionAnnotations((AnnotatedBeanDefinition) candidate);
 				}

@@ -251,6 +251,8 @@ public abstract class AbstractAutoProxyCreator extends ProxyProcessorSupport
 	 * @param beanName beanName
 	 * @return
 	 * @throws BeansException
+	 *
+	 *
 	 */
 	@Override
 	public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
@@ -488,7 +490,7 @@ public abstract class AbstractAutoProxyCreator extends ProxyProcessorSupport
 
 		//为proxyFactory设置创建jdk代理还是cglib代理
 		// 如果设置了 <aop:aspectj-autoproxy proxy-target-class="true"/>不会进if，说明强制使用cglib
-		if (!proxyFactory.isProxyTargpetClass()) {
+		if (!proxyFactory.isProxyTargetClass()) {
 			// 内部设置的 ，   配置类就会设置这个属性
 			if (shouldProxyTargetClass(beanClass, beanName)) {
 				proxyFactory.setProxyTargetClass(true);

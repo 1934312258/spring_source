@@ -182,7 +182,7 @@ public class ReflectiveMethodInvocation implements ProxyMethodInvocation, Clonea
 			}
 		}
 		else {
-			//在这个地方需要注意，抵用第一个拦截器的invoke方法，传入的是this 当前的方法拦截器对象
+			//在这个地方需要注意，调用第一个拦截器的invoke方法，传入的是this 当前的方法拦截器对象
 			return ((MethodInterceptor) interceptorOrInterceptionAdvice).invoke(this);
 		}
 	}

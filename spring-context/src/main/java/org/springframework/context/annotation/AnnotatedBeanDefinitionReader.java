@@ -221,7 +221,6 @@ public class AnnotatedBeanDefinitionReader {
 		if (this.conditionEvaluator.shouldSkip(abd.getMetadata())) {
 			return;
 		}
-
 		abd.setInstanceSupplier(instanceSupplier);
 		//解析bean的作用域，如果没有设置的话，默认为单例
 		ScopeMetadata scopeMetadata = this.scopeMetadataResolver.resolveScopeMetadata(abd);

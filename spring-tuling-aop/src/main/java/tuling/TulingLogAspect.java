@@ -49,5 +49,4 @@ public class TulingLogAspect {
         String methodName = joinPoint.getSignature().getName();
         System.out.println("执行目标方法【"+methodName+"】的<异常通知>,入参"+Arrays.asList(joinPoint.getArgs()));
     }
-
 }
